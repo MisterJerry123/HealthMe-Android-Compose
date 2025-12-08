@@ -17,31 +17,32 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.AppColors
+import com.example.healthmeconverttocomposablecode.ui.AppColors.bigButtonColor
 
 @Composable
-fun BigButton(
+fun MediumButton(
     text: String,
-    backgroundColor: Color = AppColors.bigButtonColor,
-    borderColor: Color = AppColors.bigButtonBorder,
-    textColor: Color = AppColors.bigButtonTextColor
+    backgroundColor: Color = AppColors.mediumButtonColor,
+    borderColor: Color = AppColors.mediumButtonBorder,
+    textColor: Color = AppColors.mediumButtonTextColor,
 ) {
     Box(
         modifier = Modifier
             .height(58.dp)
             .fillMaxWidth()
-            .background(color = backgroundColor, shape = RoundedCornerShape(29.dp))
+            .background(color = backgroundColor, shape = RoundedCornerShape(22.dp))
             .border(
                 color = borderColor,
-                width = 2.dp,
-                shape = RoundedCornerShape(29.dp)
+                width = 3.dp,
+                shape = RoundedCornerShape(22.dp)
             ), contentAlignment = Alignment.Center
     ) {
         Text(
             text = text,
             fontFamily = AppFonts.gmarketSans,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.Medium,
             color = textColor,
-            fontSize = 17.sp
+            fontSize = 16.sp
         )
 
     }
@@ -50,6 +51,6 @@ fun BigButton(
 
 @Preview(showBackground = false)
 @Composable
-fun BigButtonPreview() {
-    BigButton("로그인")
+fun MediumButtonPreview() {
+    MediumButton("로그인")
 }
