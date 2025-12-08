@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.example.healthmeconverttocomposablecode.R
 import com.example.healthmeconverttocomposablecode.presentation.component.BigButton
 import com.example.healthmeconverttocomposablecode.ui.AppFonts
-import com.example.healthmeconverttocomposablecode.ui.theme.AppColors
+import com.example.healthmeconverttocomposablecode.ui.AppColors
 
 @Composable
 fun FirstScreen() {
