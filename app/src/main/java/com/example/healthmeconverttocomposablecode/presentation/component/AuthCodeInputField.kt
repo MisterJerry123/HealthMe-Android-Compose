@@ -98,6 +98,7 @@ fun AuthCodeInputField(
                     modifier = Modifier
                         .padding(end = 2.dp, start = 5.dp)
                         .size(width = 35.dp, height = 22.dp)
+                        .clickable(onClick = onVerifyClick)
                         .background(
                             color = AppColors.authButtonColor,
                             shape = RoundedCornerShape(5.dp)
@@ -106,7 +107,6 @@ fun AuthCodeInputField(
                 ) {
                     Text(
                         "인증",
-                        modifier = Modifier.clickable(onClick = onVerifyClick),
                         fontFamily = AppFonts.gmarketSans,
                         fontSize = 8.sp,
                         color = AppColors.authTextColor,
@@ -117,6 +117,7 @@ fun AuthCodeInputField(
                     modifier = Modifier
                         .padding(end = 29.dp)
                         .size(width = 35.dp, height = 22.dp)
+                        .clickable(onClick = onResendClick)
                         .background(
                             color = AppColors.authButtonColor,
                             shape = RoundedCornerShape(5.dp)
@@ -125,7 +126,6 @@ fun AuthCodeInputField(
                 ) {
                     Text(
                         "재전송",
-                        modifier = Modifier.clickable(onClick = onResendClick),
                         fontFamily = AppFonts.gmarketSans,
                         fontSize = 8.sp,
                         color = AppColors.authTextColor,

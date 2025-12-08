@@ -30,7 +30,12 @@ import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.AppColors
 
 @Composable
-fun EmailAuthInputField(label: String, placeholder: String, onClick: () -> Unit) {
+fun EmailAuthInputField(
+    label: String,
+    placeholder: String,
+    onClick: () -> Unit,
+    onValueChange: (String) -> Unit
+) {
     val inputText = remember { mutableStateOf("") }
     val isEnable = remember { mutableStateOf<Boolean>(false) }
     val emailRegex = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
@@ -116,5 +121,5 @@ fun EmailAuthInputField(label: String, placeholder: String, onClick: () -> Unit)
 @Preview(showBackground = true)
 @Composable
 fun EmailAuthInputFieldPreview() {
-    EmailAuthInputField("이메일", "Health1234@gmail.com", {})
+    EmailAuthInputField("이메일", "Health1234@gmail.com", {},{})
 }
