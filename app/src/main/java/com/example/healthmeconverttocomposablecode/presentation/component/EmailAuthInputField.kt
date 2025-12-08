@@ -30,7 +30,7 @@ import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.AppColors
 
 @Composable
-fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit) {
+fun EmailAuthInputField(label: String, placeholder: String, onClick: () -> Unit) {
     val inputText = remember { mutableStateOf("") }
     val isEnable = remember { mutableStateOf<Boolean>(false) }
     val emailRegex = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
@@ -66,11 +66,25 @@ fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit)
                 value = inputText.value,//inputText
                 onValueChange = { inputText.value = it },
                 modifier = Modifier.padding(start = 17.dp),
+                singleLine = true,
+                placeholder = {
+                    Text(
+                        text = placeholder,
+                        fontSize = 12.sp,
+                        color = AppColors.placeholderColor,
+                        fontFamily = AppFonts.gmarketSans,
+                        fontWeight = FontWeight.Medium,
+                        lineHeight = 22.sp
+                    )
+                },
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.Transparent,
                     unfocusedContainerColor = Color.Transparent,
                     disabledContainerColor = Color.Transparent,
-                ),//TextFieldColors(AppColors.placeholderColor),
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent,
+                    disabledIndicatorColor = Color.Transparent,
+                ),
                 textStyle = TextStyle(fontSize = 17.sp)
             )
             Box(
@@ -79,7 +93,7 @@ fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit)
                     .size(width = 72.dp, height = 22.dp)
                     .clickable(enabled = isEnable.value, onClick = onClick)
                     .background(
-                        color = if(isEnable.value)AppColors.authButtonColor else AppColors.authButtonDisableColor,
+                        color = if (isEnable.value) AppColors.authButtonColor else AppColors.authButtonDisableColor,
                         shape = RoundedCornerShape(5.dp)
                     )
                     .align(Alignment.CenterEnd),
@@ -92,7 +106,7 @@ fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit)
                     color = AppColors.authTextColor,
                     fontWeight = FontWeight.Medium,
 
-                )
+                    )
             }
         }
     }
@@ -102,5 +116,5 @@ fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit)
 @Preview(showBackground = true)
 @Composable
 fun EmailAuthInputFieldPreview() {
-    EmailAuthInputField("이메일", "Health1234@gmail.com",{})
+    EmailAuthInputField("이메일", "Health1234@gmail.com", {})
 }
