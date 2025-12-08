@@ -18,7 +18,7 @@ import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.theme.AppColors
 
 @Composable
-fun BigButton(text: String, modifier:Modifier = Modifier) {
+fun BigButton(text: String) {
     Box(
         modifier = Modifier
             .height(58.dp)
