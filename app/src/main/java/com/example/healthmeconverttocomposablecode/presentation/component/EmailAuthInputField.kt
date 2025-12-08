@@ -87,7 +87,6 @@ fun EmailAuthInputField(label: String, placeholder: String,onClick : () -> Unit)
             ) {
                 Text(
                     "인증코드 발송",
-                    modifier = Modifier,
                     fontFamily = AppFonts.gmarketSans,
                     fontSize = 8.sp,
                     color = AppColors.authTextColor,
