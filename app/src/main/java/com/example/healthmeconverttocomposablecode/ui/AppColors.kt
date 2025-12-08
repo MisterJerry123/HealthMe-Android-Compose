@@ -20,6 +20,7 @@ object AppColors {
     val passwordNotMatchBorder = Color(0xffFF7F7F)
 
     val authButtonColor = Color(0xffDBFF00)
+    val authButtonDisableColor = Color(0xffDADADA)
     val authTextColor = Color(0xff829800)
 
     val countDownTextColor = Color(0xffAFAFAF)
