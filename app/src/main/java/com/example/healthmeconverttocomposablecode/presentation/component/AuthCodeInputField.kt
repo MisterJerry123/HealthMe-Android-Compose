@@ -10,27 +10,25 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.OutlinedTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.AppColors
+import com.example.healthmeconverttocomposablecode.ui.AppFonts
 
 @Composable
 fun AuthCodeInputField(label: String, placeholder: String = "") {
@@ -72,11 +70,12 @@ fun AuthCodeInputField(label: String, placeholder: String = "") {
                     focusedContainerColor = Color.Transparent,
                     unfocusedContainerColor = Color.Transparent,
                     disabledContainerColor = Color.Transparent,
-                ),//TextFieldColors(AppColors.placeholderColor),
+                ),
                 textStyle = TextStyle(fontSize = 17.sp),
-                placeholder = {
-                    placeholder
-                }
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
+                ),
+
             )
 
             Row(modifier = Modifier.align(Alignment.CenterEnd)) {
@@ -134,5 +133,5 @@ fun AuthCodeInputField(label: String, placeholder: String = "") {
 @Preview(showBackground = true)
 @Composable
 fun AuthCodeInputFieldPreview() {
-    AuthCodeInputField("인증코드", "Health1234@gmail.com")
+    AuthCodeInputField("인증코드")
 }
