@@ -77,6 +77,9 @@ fun AuthCodeInputField(label: String, placeholder: String = "") {
                     focusedContainerColor = Color.Transparent,
                     unfocusedContainerColor = Color.Transparent,
                     disabledContainerColor = Color.Transparent,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent,
+                    disabledIndicatorColor = Color.Transparent,
                 ),
                 textStyle = TextStyle(fontSize = 17.sp),
                 keyboardOptions = KeyboardOptions(
