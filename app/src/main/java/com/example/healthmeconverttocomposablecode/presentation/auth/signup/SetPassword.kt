@@ -42,14 +42,23 @@ fun SetPassword() {
                 lineHeight = 42.sp
             )
             Spacer(modifier = Modifier.height(21.dp))
-            PasswordInputField("비밀번호")
-            Spacer(modifier = Modifier.height(26.dp))
-            PasswordInputField("비밀번호 확인")
+            PasswordInputField("비밀번호", {})
+            Spacer(modifier = Modifier.height(3.dp))
+            Text(
+                "· 10자리의 영문, 특수문자(!#$%*@^&~?)만 사용 가능합니다.",
+                fontSize = 8.sp,
+                fontFamily = AppFonts.gmarketSans,
+                lineHeight = 22.sp,
+                color = AppColors.white,
+                modifier = Modifier.padding(start = 14.dp)
+            )
+
+            Spacer(modifier = Modifier.height(3.dp))
+            PasswordInputField("비밀번호 확인", {})
             Spacer(modifier = Modifier.height(95.dp))
             Box(modifier = Modifier.padding(horizontal = 48.dp)) {
                 MediumButton("다음")
             }
-
 
 
         }
