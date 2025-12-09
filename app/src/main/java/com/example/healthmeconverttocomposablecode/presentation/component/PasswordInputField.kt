@@ -35,6 +35,8 @@ import com.example.healthmeconverttocomposablecode.ui.AppFonts
 @Composable
 fun PasswordInputField(label: String, onValueChange: (String) -> Unit) {
     var inputText by remember { mutableStateOf("") }
+    var isValid by remember { mutableStateOf(false) }
+
 
 
     Column(modifier = Modifier.fillMaxWidth()) {
@@ -82,7 +84,7 @@ fun PasswordInputField(label: String, onValueChange: (String) -> Unit) {
             )
 
             Image(
-                painter = painterResource(R.drawable.password_no_check),
+                painter = if(isValid)painterResource(R.drawable.password_check) else painterResource(R.drawable.password_no_check),
                 contentDescription = "비밀번호 체크",
                 modifier = Modifier
                     //.align(Alignment.CenterEnd)
@@ -99,3 +101,4 @@ fun PasswordInputField(label: String, onValueChange: (String) -> Unit) {
 fun PasswordInputFieldPreview() {
     PasswordInputField("비밀번호", onValueChange = ({ it }))
 }
+
