@@ -31,13 +31,13 @@ import com.example.healthmeconverttocomposablecode.ui.AppFonts
 @Composable
 fun EmailAuthInputField(
     label: String,
+    value:String,
     placeholder: String,
     onClick: () -> Unit,
     onValueChange: (String) -> Unit,
     isEnableButton: Boolean,
     isTextFieldEnable: Boolean
 ) {
-    val inputText = remember { mutableStateOf("") }
 
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
@@ -64,9 +64,8 @@ fun EmailAuthInputField(
             contentAlignment = Alignment.CenterStart
         ) {
             TextField(
-                value = inputText.value,//inputText
+                value = value,
                 onValueChange = {
-                    inputText.value = it
                     onValueChange(it) //외부 콜백에 전달
                 },
                 modifier = Modifier.padding(start = 17.dp),
