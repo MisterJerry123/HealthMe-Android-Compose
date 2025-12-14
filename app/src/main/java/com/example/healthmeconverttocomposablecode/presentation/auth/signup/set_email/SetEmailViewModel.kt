@@ -60,9 +60,7 @@ class SetEmailViewModel : ViewModel() {
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
-                SetEmailViewModel(
-
-                )
+                SetEmailViewModel()
             }
         }
     }
