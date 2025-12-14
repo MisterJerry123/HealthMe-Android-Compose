@@ -27,10 +27,6 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
         entryProvider = entryProvider {
             entry<Route.Splash> {
                 SplashScreen(
-                    onSplashStart = {
-                        topLevelBackStack.clear()
-                        topLevelBackStack.add(Route.Splash)
-                    },
                     onLoginButtonClick = {
                         topLevelBackStack.clear()
                         topLevelBackStack.add(Route.Login)
@@ -41,14 +37,6 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
                     })
             }
             entry<Route.SetEmail> {
-//                SetEmailScreen(
-//                    onNextButtonClick = {
-//                        toplevelBackStack.clear()
-//                        toplevelBackStack.add(Route.SetPassword)
-//                    },
-//                    {
-//                        ("it")
-//                    })
                 SetEmailRoot()
             }
             entry<Route.SetPassword> {
