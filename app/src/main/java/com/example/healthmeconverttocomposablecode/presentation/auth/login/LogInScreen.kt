@@ -27,11 +27,11 @@ import androidx.compose.ui.unit.sp
 import com.example.healthmeconverttocomposablecode.R
 import com.example.healthmeconverttocomposablecode.presentation.component.InputField
 import com.example.healthmeconverttocomposablecode.presentation.component.MediumButton
-import com.example.healthmeconverttocomposablecode.ui.AppFonts
 import com.example.healthmeconverttocomposablecode.ui.AppColors
+import com.example.healthmeconverttocomposablecode.ui.AppFonts
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(onLoginButtonClick: () -> Unit) {
     Box {
         Column(
             modifier = Modifier
@@ -90,7 +90,9 @@ fun LoginScreen() {
                     .fillMaxWidth()
                     .padding(horizontal = 48.dp), horizontalArrangement = Arrangement.Center
             ) {
-                MediumButton("로그인")
+                MediumButton("로그인") {
+                    onLoginButtonClick()
+                }
             }
             Spacer(modifier = Modifier.height(5.dp))
             Row(
@@ -136,6 +138,8 @@ fun LoginScreen() {
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen()
+    LoginScreen() {
+
+    }
 
 }
