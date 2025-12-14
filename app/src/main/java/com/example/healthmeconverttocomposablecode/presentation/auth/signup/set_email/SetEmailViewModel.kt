@@ -8,9 +8,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class SetEmailViewModel(
-
-) : ViewModel() {
+class SetEmailViewModel : ViewModel() {
     private val EMAIL_REGEX = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
     private val AUTH_CODE_REGEX = Regex("^\\d{6}$")
 
