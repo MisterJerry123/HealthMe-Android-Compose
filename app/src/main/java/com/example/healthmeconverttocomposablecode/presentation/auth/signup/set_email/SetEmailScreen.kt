@@ -1,4 +1,4 @@
-package com.example.healthmeconverttocomposablecode.presentation.auth.signup
+package com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_email
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -30,7 +30,7 @@ import com.example.healthmeconverttocomposablecode.ui.AppColors
 import com.example.healthmeconverttocomposablecode.ui.AppFonts
 
 @Composable
-fun SetEmail() {
+fun SetEmailScreen() {
     var isCodeFieldVisible by remember { mutableStateOf(false) }
     var authCode by remember { mutableStateOf("") }
 
@@ -89,6 +89,6 @@ fun SetEmail() {
 
 @Preview(showBackground = true)
 @Composable
-fun SetEmailPreview() {
-    SetEmail()
+fun SetEmailScreenPreview() {
+    SetEmailScreen()
 }
