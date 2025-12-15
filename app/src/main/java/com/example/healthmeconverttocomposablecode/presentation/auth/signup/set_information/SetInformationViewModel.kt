@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.asStateFlow
 
 private val NAME_REGEX = Regex("^.{2,}\$")
 private val BIRTHDATE_REGEX = Regex("^\\d{4}\\.(0[1-9]|1[0-2])\\.(0[1-9]|[12]\\d|3[01])$")
-private val Height_REGEX = Regex("^(?:[1-9]|[1-9][0-9]|[1-2][0-9]{2}|300)$")
-private val Weight_REGEX = Regex("^(?:[1-9]|[1-9][0-9]|[1-6][0-9]{2}|700)$")
+private val HEIGHT_REGEX = Regex("^(?:[1-9]|[1-9][0-9]|[1-2][0-9]{2}|300)$")
+private val WEIGHT_REGEX = Regex("^(?:[1-9]|[1-9][0-9]|[1-6][0-9]{2}|700)$")
 
 class SetInformationViewModel(
 
@@ -49,7 +49,7 @@ class SetInformationViewModel(
     }
 
     fun isValidHeight(height: String) {
-        if (Height_REGEX.matches(height)) {
+        if (HEIGHT_REGEX.matches(height)) {
             _state.value = _state.value.copy(height = height, isHeightSatisfyRule = true)
         } else {
             _state.value = _state.value.copy(height = height, isHeightSatisfyRule = false)
@@ -62,7 +62,7 @@ class SetInformationViewModel(
     }
 
     fun isValidWeight(weight: String) {
-        if (Weight_REGEX.matches(weight)) {
+        if (WEIGHT_REGEX.matches(weight)) {
             _state.value = _state.value.copy(weight = weight, isWeightSatisfyRule = true)
         } else {
             _state.value = _state.value.copy(weight = weight, isWeightSatisfyRule = false)
@@ -122,9 +122,9 @@ class SetInformationViewModel(
     }
 
     fun isAllInformationValid(state: SetInformationState): Boolean {
-        return NAME_REGEX.matches(state.name) && BIRTHDATE_REGEX.matches(state.birthDate) && state.gender != GenderState.NONE && Height_REGEX.matches(
+        return NAME_REGEX.matches(state.name) && BIRTHDATE_REGEX.matches(state.birthDate) && state.gender != GenderState.NONE && HEIGHT_REGEX.matches(
             state.height
-        ) && Weight_REGEX.matches(state.weight)
+        ) && WEIGHT_REGEX.matches(state.weight)
     }
 
 
