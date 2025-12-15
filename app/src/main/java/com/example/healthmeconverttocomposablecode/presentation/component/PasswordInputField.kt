@@ -106,6 +106,6 @@ fun PasswordInputField(
 @Preview(showBackground = true)
 @Composable
 fun PasswordInputFieldPreview() {
-    //PasswordInputField("비밀번호", onValueChange = ({ it }))
+    PasswordInputField("비밀번호", onValueChange = {it}, isSatisfyPasswordRule = PasswordState.SATISFY)
 }
 
