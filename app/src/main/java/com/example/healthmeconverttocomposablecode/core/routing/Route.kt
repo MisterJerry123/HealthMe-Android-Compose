@@ -16,4 +16,6 @@ sealed interface Route : NavKey {
     @Serializable
     data class SetPassword(val email:String) : Route
 
+    data class SetInformation(val email:String, val password: String) : Route
+
 }
