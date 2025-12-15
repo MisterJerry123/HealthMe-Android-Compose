@@ -3,7 +3,6 @@ package com.example.healthmeconverttocomposablecode.presentation.auth.signup.set
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
@@ -12,7 +11,6 @@ fun SetInformationRoot(
     password: String,
     viewModel: SetInformationViewModel = viewModel(factory = SetInformationViewModel.Factory)
 ) {
-
     val state by viewModel.state.collectAsState()
     SetInformationScreen(
         state = state,
