@@ -30,7 +30,7 @@ fun MediumButton(
 ) {
     Box(
         modifier = Modifier
-            .height(58.dp)
+            .height(50.dp)
             .fillMaxWidth()
             .background(
                 color = if (isEnableButton) backgroundColor else AppColors.authButtonDisableColor,
