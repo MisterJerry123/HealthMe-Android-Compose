@@ -48,9 +48,7 @@ fun AgreeAllTermsButton(
         Box(
             modifier = Modifier
                 .padding(start = 26.dp)
-
                 .size(15.dp)
-                .fillMaxWidth()
                 .align(Alignment.CenterStart)
                 .background(
                     color = AppColors.white, shape = RoundedCornerShape(2.dp)
