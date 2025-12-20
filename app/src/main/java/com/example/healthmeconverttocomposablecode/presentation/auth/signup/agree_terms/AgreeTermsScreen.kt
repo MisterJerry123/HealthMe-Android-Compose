@@ -96,7 +96,7 @@ fun AgreeTermsScreen(
             Spacer(modifier = Modifier.height(84.dp))
 
             Box(modifier = Modifier.padding(horizontal = 48.dp)) {
-                MediumButton(text = "다음", onClick = {}, isEnableButton = state.isNextButtonEnable)
+                MediumButton(text = "다음", onClick = {}, isEnableButton = state.isNextButtonEnabled)
             }
         }
         Image(
@@ -109,7 +109,7 @@ fun AgreeTermsScreen(
     }
 
     if (state.isDialogShow) {
-        AgreeTermsDialog(isAgreeTerms = state.isAgreeTerm, onDismissRequest = {bool, booleans ->
+        AgreeTermsDialog(isAgreeTerms = state.isAgreeTerms, onDismissRequest = { bool, booleans ->
             onClickAllAgreeTermsButton(bool,booleans)
 
         })

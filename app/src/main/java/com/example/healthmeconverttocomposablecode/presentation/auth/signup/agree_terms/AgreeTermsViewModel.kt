@@ -18,13 +18,13 @@ class AgreeTermsViewModel(
         _state.value = _state.value.copy(isDialogShow = !(_state.value.isDialogShow))
     }
     fun enableNextButton(){
-        _state.value = _state.value.copy(isNextButtonEnable = true, isAllTermsAgreed = true)
+        _state.value = _state.value.copy(isNextButtonEnabled = true, isAllTermsAgreed = true)
     }
     fun disableNextButton(){
-        _state.value = _state.value.copy(isNextButtonEnable = false, isAllTermsAgreed = false)
+        _state.value = _state.value.copy(isNextButtonEnabled = false, isAllTermsAgreed = false)
     }
     fun agreeTerm(result : List<Boolean>){
-        _state.value = _state.value.copy(isAgreeTerm = result)
+        _state.value = _state.value.copy(isAgreeTerms = result)
 
     }
 
