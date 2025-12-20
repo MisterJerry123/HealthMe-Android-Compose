@@ -56,4 +56,6 @@ object AppColors {
     val agreeAllTermsCheckIconColor = Color(0xff00D93D)
     val notAgreeAllTermsCheckIconBorderColor = Color(0xffABC600)
     val horizontalDividerColor = Color(0xffC3C3C3)
+
+    val greetingTextColor = Color(0xff0010FF)
 }
