@@ -111,28 +111,23 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
                             entryProvider = entryProvider {
                                 entry<Route.Home> {
                                     HomeScreen() {
-                                        topLevelBackStack.add(Route.Home)
                                     }
 
                                 }
                                 entry<Route.MyPage> {
                                     MyPageScreen() {
-                                        topLevelBackStack.add(Route.MyPage)
                                     }
                                 }
                                 entry<Route.Food> {
                                     FoodScreen() {
-                                        topLevelBackStack.add(Route.Food)
                                     }
                                 }
                                 entry<Route.Schedule> {
                                     ScheduleScreen() {
-                                        topLevelBackStack.add(Route.Schedule)
                                     }
                                 }
                                 entry<Route.Exercise> {
                                     ExerciseScreen() {
-                                        topLevelBackStack.add(Route.Exercise)
                                     }
                                 }
 
