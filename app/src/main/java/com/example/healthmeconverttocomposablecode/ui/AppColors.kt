@@ -58,4 +58,9 @@ object AppColors {
     val horizontalDividerColor = Color(0xffC3C3C3)
 
     val greetingTextColor = Color(0xff0010FF)
+
+    val bottomNavSelectedColor = Color(0xff00099C)
+    val bottomNavNotSelectedColor = Color(0xff636CFF)
+    val bottomNavBackgroundColor = Color(0xffCBCEFF)
+
 }
