@@ -4,12 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun SetInformationRoot(
     email: String,
     password: String,
-    viewModel: SetInformationViewModel = viewModel(factory = SetInformationViewModel.Factory),
+    viewModel: SetInformationViewModel = koinViewModel(),
     onNextButtonClick: (
         email: String,
         password: String,

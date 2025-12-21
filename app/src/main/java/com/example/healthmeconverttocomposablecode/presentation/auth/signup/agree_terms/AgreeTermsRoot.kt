@@ -3,10 +3,13 @@ package com.example.healthmeconverttocomposablecode.presentation.auth.signup.agr
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun AgreeTermsRoot(viewModel: AgreeTermsViewModel= viewModel(factory = AgreeTermsViewModel.Factory),onClickNextButton:()-> Unit) {
+fun AgreeTermsRoot(
+    viewModel: AgreeTermsViewModel = koinViewModel(),
+    onClickNextButton: () -> Unit
+) {
 
     val state = viewModel.state.collectAsState()
 

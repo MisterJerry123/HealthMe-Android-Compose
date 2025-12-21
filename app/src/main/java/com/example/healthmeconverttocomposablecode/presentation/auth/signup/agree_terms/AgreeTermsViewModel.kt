@@ -27,12 +27,4 @@ class AgreeTermsViewModel(
         _state.value = _state.value.copy(isAgreeTerms = result)
 
     }
-
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                AgreeTermsViewModel()
-            }
-        }
-    }
 }
