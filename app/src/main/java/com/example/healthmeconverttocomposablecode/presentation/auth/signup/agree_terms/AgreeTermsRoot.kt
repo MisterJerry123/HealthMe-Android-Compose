@@ -3,8 +3,7 @@ package com.example.healthmeconverttocomposablecode.presentation.auth.signup.agr
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
-import org.koin.compose.viewmodel.koinViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun AgreeTermsRoot(
