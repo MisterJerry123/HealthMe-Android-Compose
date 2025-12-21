@@ -8,11 +8,17 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.example.healthmeconverttocomposablecode.presentation.auth.login.LoginScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.exercise.ExerciseScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.food.FoodScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.home.HomeScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.my_page.MyPageScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.schedule.ScheduleScreen
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.agree_terms.AgreeTermsRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.complete_signup.CompleteSignupRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_email.SetEmailRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_information.SetInformationRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_password.SetPasswordRoot
+import com.example.healthmeconverttocomposablecode.presentation.main.main.MainScreen
 import com.example.healthmeconverttocomposablecode.presentation.splash.SplashScreen
 
 @Composable
@@ -80,14 +86,55 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
 
             }
             entry<Route.Login> {
-                LoginScreen() {
-                }
+                LoginScreen(onLoginButtonClick = {
+                    topLevelBackStack.clear()
+                    topLevelBackStack.add(Route.Main)
+                })
             }
             entry<Route.CompleteSignup> {
                 CompleteSignupRoot(onClickScreen = {
                     topLevelBackStack.clear()
                     topLevelBackStack.add(Route.Splash)
                 })
+            }
+            entry<Route.Main> {
+                val backStack = rememberNavBackStack(Route.Home)
+                MainScreen(
+                    backStack = backStack,
+                    body = {
+                        NavDisplay(
+                            backStack = backStack,
+                            entryDecorators = listOf(
+                                rememberSaveableStateHolderNavEntryDecorator(),
+                                rememberViewModelStoreNavEntryDecorator()
+                            ),
+                            entryProvider = entryProvider {
+                                entry<Route.Home> {
+                                    HomeScreen() {
+                                    }
+
+                                }
+                                entry<Route.MyPage> {
+                                    MyPageScreen() {
+                                    }
+                                }
+                                entry<Route.Food> {
+                                    FoodScreen() {
+                                    }
+                                }
+                                entry<Route.Schedule> {
+                                    ScheduleScreen() {
+                                    }
+                                }
+                                entry<Route.Exercise> {
+                                    ExerciseScreen() {
+                                    }
+                                }
+
+                            }
+                        )
+                    }
+                )
             }
         }
 
