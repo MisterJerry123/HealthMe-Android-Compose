@@ -8,6 +8,8 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.example.healthmeconverttocomposablecode.presentation.auth.login.LoginScreen
+import com.example.healthmeconverttocomposablecode.presentation.auth.signup.agree_terms.AgreeTermsRoot
+import com.example.healthmeconverttocomposablecode.presentation.auth.signup.complete_signup.CompleteSignupRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_email.SetEmailRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_information.SetInformationRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_password.SetPasswordRoot
@@ -44,17 +46,48 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
                 })
             }
             entry<Route.SetPassword> {
-                SetPasswordRoot(it.email, onNextButtonClick = {email,password->
+                SetPasswordRoot(it.email, onNextButtonClick = { email, password ->
                     topLevelBackStack.clear()
                     topLevelBackStack.add(Route.SetInformation(email = email, password = password))
                 })
             }
-            entry <Route.SetInformation>{
-                SetInformationRoot(email = it.email,password = it.password)
+            entry<Route.SetInformation> {
+                SetInformationRoot(
+                    email = it.email,
+                    password = it.password,
+                    onNextButtonClick = { email, password, name, birthDate, gender, height, weight ->
+                        topLevelBackStack.clear()
+                        topLevelBackStack.add(
+                            Route.AgreeTerms(
+                                email = email,
+                                password = password,
+                                name = name,
+                                birthDate = birthDate,
+                                gender = gender,
+                                height = height,
+                                weight = weight
+                            )
+                        )
+                    }
+                )
+            }
+            entry<Route.AgreeTerms> {
+                AgreeTermsRoot(onClickNextButton = {
+                    topLevelBackStack.clear()
+                    topLevelBackStack.add(Route.CompleteSignup)
+                })
+
+
             }
             entry<Route.Login> {
                 LoginScreen() {
                 }
+            }
+            entry<Route.CompleteSignup> {
+                CompleteSignupRoot(onClickScreen = {
+                    topLevelBackStack.clear()
+                    topLevelBackStack.add(Route.Splash)
+                })
             }
         }
 

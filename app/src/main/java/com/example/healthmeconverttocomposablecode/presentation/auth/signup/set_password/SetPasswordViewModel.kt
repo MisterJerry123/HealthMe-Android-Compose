@@ -76,12 +76,4 @@ class SetPasswordViewModel() : ViewModel() {
             }
         }
     }
-
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                SetPasswordViewModel()
-            }
-        }
-    }
 }
