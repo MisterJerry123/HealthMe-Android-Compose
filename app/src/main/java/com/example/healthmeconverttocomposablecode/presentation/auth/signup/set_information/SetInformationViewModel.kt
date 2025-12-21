@@ -126,13 +126,4 @@ class SetInformationViewModel(
             state.height
         ) && WEIGHT_REGEX.matches(state.weight)
     }
-
-
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                SetInformationViewModel()
-            }
-        }
-    }
 }
