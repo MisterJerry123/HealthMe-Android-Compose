@@ -3,11 +3,11 @@
 <h3 align="center">✨ Tech Stack & Tools ✨</h3>
 <div align="center">
     
-`Jetpack Compose` `MVVM` `ViewModel` `Navigation3` `Coroutine`
+`Jetpack Compose` `MVVM` `ViewModel` `Navigation3` `Coroutine` `Koin`
 
 </div>
 
-<!-- `Koin` `Clean Architecture` `JUnit4` ``
+<!--  `Clean Architecture` `JUnit4` ``
 
 -->
 <!-- <div align="center">
@@ -71,5 +71,15 @@
 - **Design**: `AgreeAllTermsButton` 체크박스 레이아웃 개선
 
 #### 2025-12-21
-- **Feature**: 회원가입 완료 화면(`SignUpComplete`) 구현, 약관 동의 후 완료 화면으로의 라우팅 처리
-- **Design**: 완료 화면에 로고 아이콘 추가 및 인사말 텍스트 색상 적용
+- **Architecture**: 의존성 주입(DI) 라이브러리 `Koin` 도입 및 설정 (`HealthMeApplication`, 모듈 정의)
+- **Feature**: 회원가입 완료 화면(`SignUpComplete`) 구현 및 약관 동의 후 라우팅 연결
+- **Refactoring**: `ViewModel` 주입 방식 변경 (`Factory` -> `koinViewModel`) 및 불필요한 코드 제거
+- **Design**: 완료 화면 로고 아이콘 추가 및 텍스트 스타일 적용
+
+#### 2025-12-22
+- **Feature**:
+  - 메인 화면(`MainScreen`) 및 하단 내비게이션(`BottomNavigationBar`) 구현
+  - 주요 탭 화면(홈, 운동, 식단, 스케줄, 마이페이지) 추가 및 라우팅 구성
+  - 로그인 완료 후 메인 화면 진입 프로세스 구현
+- **Design**: 하단 내비게이션 바 아이콘 및 색상 스타일링
+- **Refactoring**: 내비게이션 백스택 관리 로직 개선 (`topLevelBackStack` 제거)
