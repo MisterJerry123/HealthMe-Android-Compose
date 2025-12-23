@@ -11,7 +11,7 @@ import com.example.healthmeconverttocomposablecode.presentation.auth.login.Login
 import com.example.healthmeconverttocomposablecode.presentation.main.exercise.ExerciseScreen
 import com.example.healthmeconverttocomposablecode.presentation.main.food.FoodScreen
 import com.example.healthmeconverttocomposablecode.presentation.main.home.HomeScreen
-import com.example.healthmeconverttocomposablecode.presentation.main.my_page.MyPageScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.my_page.my_page_main.MyPageMainScreen
 import com.example.healthmeconverttocomposablecode.presentation.main.schedule.ScheduleScreen
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.agree_terms.AgreeTermsRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.complete_signup.CompleteSignupRoot
@@ -19,6 +19,7 @@ import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_information.SetInformationRoot
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_password.SetPasswordRoot
 import com.example.healthmeconverttocomposablecode.presentation.main.main.MainScreen
+import com.example.healthmeconverttocomposablecode.presentation.main.my_page.set_body_info.SetBodyInfoRoot
 import com.example.healthmeconverttocomposablecode.presentation.splash.SplashScreen
 
 @Composable
@@ -55,6 +56,11 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
                 SetPasswordRoot(it.email, onNextButtonClick = { email, password ->
                     topLevelBackStack.clear()
                     topLevelBackStack.add(Route.SetInformation(email = email, password = password))
+                })
+            }
+            entry<Route.SetBody> {
+                SetBodyInfoRoot(onClickBackButton = {
+                    topLevelBackStack.removeLast()
                 })
             }
             entry<Route.SetInformation> {
@@ -115,8 +121,11 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
 
                                 }
                                 entry<Route.MyPage> {
-                                    MyPageScreen() {
-                                    }
+                                    MyPageMainScreen(onSelectedBodyInfo = {
+                                        topLevelBackStack.add(Route.SetBody)
+                                    },
+                                        onSelectedClick = {})
+
                                 }
                                 entry<Route.Food> {
                                     FoodScreen() {
@@ -130,6 +139,7 @@ fun NavigationRoot(modifier: Modifier = Modifier) {
                                     ExerciseScreen() {
                                     }
                                 }
+
 
                             }
                         )

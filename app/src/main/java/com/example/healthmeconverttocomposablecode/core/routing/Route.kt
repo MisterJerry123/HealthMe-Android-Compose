@@ -51,4 +51,7 @@ sealed interface Route : NavKey {
 
     @Serializable
     data object Schedule : Route
+
+    @Serializable
+    data object SetBody : Route
 }
