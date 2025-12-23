@@ -4,6 +4,7 @@ import com.example.healthmeconverttocomposablecode.presentation.auth.signup.agre
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_email.SetEmailViewModel
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_information.SetInformationViewModel
 import com.example.healthmeconverttocomposablecode.presentation.auth.signup.set_password.SetPasswordViewModel
+import com.example.healthmeconverttocomposablecode.presentation.main.my_page.set_body_info.SetBodyInfoViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -12,4 +13,5 @@ val viewModelModule = module {
     viewModel { SetEmailViewModel() }
     viewModel { SetInformationViewModel() }
     viewModel { SetPasswordViewModel() }
+    viewModel { SetBodyInfoViewModel() }
 }
